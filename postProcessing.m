@@ -110,7 +110,7 @@ if (fid > 0)
     [trackResults, channel] = tracking(fid, channel, settings);
 
     % Close the data file
-    fclose(fid);
+    %fclose(fid);
     
     disp(['   Tracking is over (elapsed time ', ...
                                         datestr(now - startTime, 13), ')'])     
