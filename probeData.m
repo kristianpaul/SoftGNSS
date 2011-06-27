@@ -94,7 +94,7 @@ if (fid > 0)
     
     %--- Frequency domain plot --------------------------------------------
     subplot(2,2,2);
-    pwelch(data-mean(data), 16384, 1024, 2048, settings.samplingFreq/1e6)
+    pwelch(data-mean(data), 16384, 0.1024, 2048, settings.samplingFreq/1e6)
     
     axis tight;
     grid on;
@@ -107,8 +107,8 @@ if (fid > 0)
     
     dmax = max(abs(data)) + 1;
     axis tight;
-    adata = axis;
-    axis([-dmax dmax adata(3) adata(4)]);
+    %adata = axis;
+    %axis([-dmax dmax adata(3) adata(4)]);
     grid on;
     title ('Histogram'); 
     xlabel('Bin'); ylabel('Number in bin');
