@@ -1,0 +1,13 @@
+This is a hackish port from the  ode provided in A Software-Defined GPS and Galileo Receiver,
+make sure you install octave core  and octave-signal in debian systems.
+
+ Things seems to work at least for PRN, fix point had not been tested
+
+
+Some sampled data can be obtained from:
+  
+   http://downloads.qi-hardware.com/people/kristianpaul/GNSS_signal_records.tar.gz
+
+Will be nice also take a look to the code at:
+
+  http://kom.aau.dk/~borre/matlab/
