@@ -36,11 +36,16 @@ function plotAcquisition(acqResults)
 %% Plot all results =======================================================
 figure(101);
 
-hAxes = newplot();
+%hAxes = newplot();
+newplot();
+hAxes=gca();
 
-bar(hAxes, acqResults.peakMetric);
+%bar(hAxes, acqResults.peakMetric);
+bar(acqResults.peakMetric);
 
-title (hAxes, 'Acquisition results');
+
+%title (hAxes, 'Acquisition results');
+title ('Acquisition results');
 xlabel(hAxes, 'PRN number (no bar - SV is not in the acquisition list)');
 ylabel(hAxes, 'Acquisition Metric');
 
@@ -53,8 +58,11 @@ set   (hAxes, 'YGrid', 'on');
 
 acquiredSignals = acqResults.peakMetric .* (acqResults.carrFreq > 0);
 
-hold(hAxes, 'on');
-bar (hAxes, acquiredSignals, 'FaceColor', [0 0.8 0]);
-hold(hAxes, 'off');
+%hold(hAxes, 'on');
+%bar (hAxes, acquiredSignals, 'FaceColor', [0 0.8 0]);
+%hold(hAxes, 'off');
+hold('on');
+bar ( acquiredSignals, 'FaceColor', [0 0.8 0]);
+hold('off');
 
 legend(hAxes, 'Not acquired signals', 'Acquired signals');
