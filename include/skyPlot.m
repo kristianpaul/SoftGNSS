@@ -44,7 +44,12 @@ function hpol = skyPlot(varargin)
 %$Id: skyPlot.m,v 1.1.2.5 2006/08/18 11:41:57 dpl Exp $
 
 %% Check arguments and sort them ==========================================
-[hAxis, args, nargs] = axescheck(varargin{:});
+% [hAxis, args, nargs] = axescheck(varargin{:});
+
+% Octave replacement:
+hAxis = varargin{1};
+args = varargin(2:end);
+nargs = length(args);
 
 if nargs < 3 || nargs > 4
     error('Requires 3 or 4 data arguments.')
