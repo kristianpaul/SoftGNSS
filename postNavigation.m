@@ -140,6 +140,11 @@ for currMeasNr = 1:fix((settings.msToProcess - max(subFrameStart)) / ...
     activeChnList = intersect(find(satElev >= settings.elevationMask), ...
                               readyChnList);
 
+    % Ensure to have a row-vector
+    if(size(activeChnList, 1) > 1)
+       activeChnList = activeChnList';
+    end
+
     % Save list of satellites used for position calculation
     navSolutions.channel.PRN(activeChnList, currMeasNr) = ...
                                         [trackResults(activeChnList).PRN]; 
